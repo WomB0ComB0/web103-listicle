@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment directories
-.env
-.env*.local
+# Deployed assets
+.env 
+server/public

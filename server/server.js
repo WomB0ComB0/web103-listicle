@@ -1,7 +1,9 @@
 import express from 'express';
 import path from 'path';
-import {fileURLToPath} from 'url';
-import data from './data/data.json';
+import { fileURLToPath } from 'url';
+
+import data from './data/data.js';
+
 import getTopMovies from './src/topMovies.js';
 import router from './routes/index.js';
 

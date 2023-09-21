@@ -2,19 +2,19 @@ import express from 'express';
 import path from 'path';
 
 import { fileURLToPath } from 'url';
-import movieData from '../data/data.json';
+import data from '../data/data.js';
 
 const __filename = fileURLToPath(import.meta.url);
 path.dirname(__filename);
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.status(200).json(movieData)
+  res.status(200).json(data)
 })
 
 router.get('/top-movies/:title', (req, res) => {
   const { title } = req.params;
-  const movie = movieData.find(movie => movie.title === title);
+  const movie = data.find(movie => movie.title === title);
   if (!movie) {
     return res.status(404).json({ error: 'Movie not found' });
   }
