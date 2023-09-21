@@ -1,2 +1,6 @@
 {
+  "ignore": [
+    "./data/data.json",
+    "./data/data.js"
+  ]
 }

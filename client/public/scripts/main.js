@@ -1,1 +1,0 @@
-const movieList = document.getElementById('movie-list');
