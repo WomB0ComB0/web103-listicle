@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const dataDirectory = './data';
-const filePath = `${dataDirectory}/data.js`;
+const filePath = `${dataDirectory}/data.json`;
 const API_KEY = process.env.RAPID_API_KEY;
 
 const options = {
@@ -27,6 +27,7 @@ const getTopMovies = async () => {
         const data = response.data.ITEMS;
         const json = JSON.stringify(data, null, 4);
 
+        // Ensure the 'data' directory exists
         try {
             await fs.mkdir(dataDirectory);
         } catch (mkdirError) {
@@ -36,7 +37,7 @@ const getTopMovies = async () => {
         }
 
         await fs.writeFile(filePath, json, 'utf8');
-        console.log('Top movies successfully written to data.js');
+        console.log('Top movies successfully written to data.json');
     } catch (error) {
         console.error('Error getting top movies:', error);
     }
