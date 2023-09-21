@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import data from './data/data.json' assert { type: 'json' };
+import data from './data/data.json';
 import getTopMovies from './src/topMovies.js';
 import router from './routes/index.js';
 

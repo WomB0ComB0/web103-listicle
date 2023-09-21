@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 
 import { fileURLToPath } from 'url';
-import movieData from '../data/data.js';
+import movieData from '../data/data.json';
 
 const __filename = fileURLToPath(import.meta.url);
 path.dirname(__filename);
