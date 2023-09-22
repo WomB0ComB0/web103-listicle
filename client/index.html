@@ -4,54 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top Movies</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./public/css/pico.min.css">
-    <script defer type="module" src="./public/scripts/main.js"></script>
+    <link rel="stylesheet" href="/css/pico.min.css">
+    <script defer type="module" src="/scripts/titles.js"></script>
   </head>
   <body id="app" class="">
-    <header class="container">
-      <nav>
-        <ul>
-          <li>
-            <img src="" alt="" />
-          </li>
-          <li>
-            <strong>
-              <a href=".">Vite App</a>
-            </strong>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="container" id="data-conatnier">
-      <section class="grid">
-        
-      </section>
-    </main>
-    <footer class="container">
-      <div id="footer-container">
-          <p>Made with
-            <span>💜</span>
-            by
-            <a  href='https://github.com/WomB0ComB0' target="_blank">
-              Mike Odnis
-            </a>
-          </p>
-          <p>
-            <small>Copywrite © <span id="year"></span> Mike Odnis. All rights reserved</small>
-          </p>
-      </div>
-    </footer>
+    <div class="preload">
+      <p>
+        Loading...
+      </p>
+    </div>
+
   </body>
+  <script defer type="module" src="./index.js"></script>
   <script>
     const today = new Date();
     const year = today.getFullYear();
     const yearElement = document.querySelector('#year');
-    yearElement.textContent = year;
+    yearElement?.textContent = year;
+    window.addEventListener('load', () => {
+      const preload = document.querySelector('.preload');
+      preload.classList.add('preload-finish');
+    });
   </script>
 </html>

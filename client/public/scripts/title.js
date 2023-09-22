@@ -5,7 +5,15 @@ const renderMovie = async () => {
 
   const data = await response.json()
 
-  // 
+  let movie
+
+  movie = data.find(movie => movie.id === requestedID)
+
+  if (movie) {
+    
+  } else {
+    
+  }
 }
 
 renderMovie();

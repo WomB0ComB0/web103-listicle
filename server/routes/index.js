@@ -6,6 +6,7 @@ import topMovies from '../data/data.js';
 
 const __filename = fileURLToPath(import.meta.url);
 path.dirname(__filename);
+
 const router = express.Router();
 
 router.get('/', (req, res) => {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import fs from 'fs/promises'; // Use fs.promises for async file operations
+import fs from 'fs/promises';
 import dotenv from 'dotenv';
 dotenv.config();
 
