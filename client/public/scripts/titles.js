@@ -1,5 +1,5 @@
 const renderMovies = async () => {
-  const response = await fetch('/api/movies');
+  const response = await fetch('http://localhost:3001/api/');
   const data = await response.json();
   
   const mainContent = document.querySelector('main');

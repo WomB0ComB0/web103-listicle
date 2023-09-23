@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import topMovies from './data/data.js';
 import getTopMovies from './src/topMovies.js';
 import router from './routes/index.js';
+import cors from 'cors';
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -12,6 +13,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+app.use(cors());
 
 app.use('/public', express.static('./public'));
 app.use('/scripts', express.static('./public/scripts'));
