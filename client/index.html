@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="/css/pico.min.css">
     <script defer type="module" src="/scripts/titles.js"></script>
   </head>
-  <body id="app" class="">
-    <div class="preload">
-      <p>
-        Loading...
-      </p>
-    </div>
-
+  <body id="app">
+    
   </body>
   <script defer type="module" src="./index.js"></script>
   <script>
@@ -21,9 +16,5 @@
     const year = today.getFullYear();
     const yearElement = document.querySelector('#year');
     yearElement?.textContent = year;
-    window.addEventListener('load', () => {
-      const preload = document.querySelector('.preload');
-      preload.classList.add('preload-finish');
-    });
   </script>
 </html>
