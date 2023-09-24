@@ -53,7 +53,7 @@ if (requestedUrl) {
   window.location.href = '../../src/page/error/404.html'
 }
 else {
+  window.addEventListener('load', () => {
     renderMovies();
+  });
 }
-
-export default renderMovies;
