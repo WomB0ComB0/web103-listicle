@@ -5,11 +5,29 @@ import './public/scss/styles.scss';
 // Wrap your code in a function to ensure it's executed after the DOM is ready
 function Body() {
   window.addEventListener('load', () => {
+    const today = new Date();
+    const year = today.getFullYear();
     const preload = document.querySelector('.preload');
     preload.classList.add('preload-finish');
     const app = document.querySelector('#app');
-      app.innerHTML = `
-    <article>
+    app.innerHTML = `
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <strong>
+            <a href="." style="color: aqua;">Top Movies</a>
+          </strong>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button>Home</button>
+        </li>
+      </ul>
+    </nav>
       <header>
         <h1>Top Movies</h1>
       </header>
@@ -62,41 +80,6 @@ function Body() {
         </div>
         <div class="grid">
           <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="add-btn">Add</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="delete-btn">Delete</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="update-btn">Update</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="save-btn">Save</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="load-btn">Load</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
             <table id="titles">
               <thead>
                 <tr>
@@ -114,20 +97,21 @@ function Body() {
           </div>
         </div>
       </section>
-      <footer>
-        <p>
-          &copy; <span id="year"></span> Top Movies
-        </p>
-      </footer>
-    </article>
-      `;
-      const nav = document.querySelector('nav');
-      nav.innerHTML = `
-        <div>
-          <p>Nav</p>
+      <footer class="">
+        <div id="footer-container">
+            <p>Made with
+              <span>💜</span>
+              by
+              <a  href='https://github.com/WomB0ComB0' target="_blank">
+                Mike Odnis
+              </a>
+            </p>
+            <p>
+              <small>Copywrite © <span id="year">${year}</span> Mike Odnis. All rights reserved</small>
+            </p>
         </div>
+      </footer>
       `;
-      app.appendChild(nav);
   });
 }
 

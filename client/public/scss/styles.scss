@@ -6,3 +6,29 @@
   margin: 0 1em;
   padding: 0.25em 1em;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+body {
+  padding-inline: 20px;
+}
+
+.btn {
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  background: transparent;
+}
+
+#footer-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+}
