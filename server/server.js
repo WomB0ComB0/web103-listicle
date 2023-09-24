@@ -2,9 +2,9 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-import topMovies from './data/data.js';
+// import topMovies from './data/data.js';
 import getTopMovies from './src/topMovies.js';
-import router from './routes/index.js';
+import titleRouter from './routes/titles.js';
 import './config/dotenv.js'
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,12 +17,8 @@ app.use(cors());
 
 app.use('/public', express.static('./public'));
 app.use('/scripts', express.static('./public/scripts'));
-app.use('/api', router);
+app.use('/api', titleRouter);
 app.use(express.json());
-
-app.get('/api', (req, res) => {
-    res.status(200).json(data);
-});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'));

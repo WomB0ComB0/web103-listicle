@@ -2,6 +2,7 @@ import axios from 'axios';
 import fs from 'fs/promises';
 import '../config/dotenv.js';
 import { options } from '../config/api.js';
+
 const dataDirectory = './data';
 const filePath = `${dataDirectory}/data.js`;
 

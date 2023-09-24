@@ -1,11 +1,17 @@
 const renderMovies = async () => {
-  const response = await fetch('http://localhost:3001/api/');
+  const response = await fetch('/titles');
   const data = await response.json();
   
-  const mainContent = document.querySelector('main');
+  // This needs to be changed to the correct element
+  const mainContent = document.querySelector('main-content');
 
   if (data) {
+    data.map((movie) => {
+      const card = document.createElement('article');
+      card.classList.add('card');
 
+      const 
+    })
   } else {
 
   }

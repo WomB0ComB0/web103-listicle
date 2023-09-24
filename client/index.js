@@ -80,20 +80,44 @@ function Body() {
         </div>
         <div class="grid">
           <div class="col-12">
-            <table id="titles">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Title</th>
-                  <th>Rating</th>
-                  <th>Year</th>
-                  <th>Title Date</th>
-                  <th>Synopsis</th>
-                </tr>
-              </thead>
-              <tbody id="titles-body">
-              </tbody>
-            </table>
+            <button class="contrast"
+              data-target="modal-example"
+              onClick="toggleModal(event)">
+              Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <dialog id="modal-example">
+              <article>
+                <a href="#close"
+                  aria-label="Close"
+                  class="close"
+                  data-target="modal-example"
+                  onClick="toggleModal(event)">
+                </a>
+                <h3>Confirm your action!</h3>
+                <p>
+                  Cras sit amet maximus risus.
+                  Pellentesque sodales odio sit amet augue finibus pellentesque.
+                  Nullam finibus risus non semper euismod.
+                </p>
+                <footer>
+                  <a href="#cancel"
+                    role="button"
+                    class="secondary"
+                    data-target="modal-example"
+                    onClick="toggleModal(event)">
+                    Cancel
+                  </a>
+                  <a href="#confirm"
+                    role="button"
+                    data-target="modal-example"
+                    onClick="toggleModal(event)">
+                    Confirm
+                  </a>
+                </footer>
+              </article>
+            </dialog>
           </div>
         </div>
       </section>
@@ -114,5 +138,5 @@ function Body() {
       `;
   });
 }
-
+// title    img    title_type    netflix_id    synopsis    rating    year    runtime    imdb_id    poster    top250    title_date
 Body();
