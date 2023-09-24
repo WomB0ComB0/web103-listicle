@@ -1,5 +1,6 @@
 import 'normalize.css/normalize.css';
 import './public/styles/sass/styles.scss';
+import renderMovies from './public/scripts/titles';
 
 function Body() {
   window.addEventListener('load', () => {
@@ -28,7 +29,7 @@ function Body() {
       </header>
       <main>
         <section id="main-content" class="container">
-          
+          ${renderMovies()}
         </section>
       </main>
       <footer class="">
