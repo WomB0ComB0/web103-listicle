@@ -8,7 +8,8 @@ export const options = {
   params: {
     type: 'movie',
     top250: '250',
-    order_by: 'top250',
+    order_by: 'top250', 
+    ascending: 'no',
   },
   headers: {
     'X-RapidAPI-Key': API_KEY,
