@@ -1,8 +1,6 @@
-// index.js
 import 'normalize.css/normalize.css';
-import './public/scss/styles.scss';
+import './public/styles/sass/styles.scss';
 
-// Wrap your code in a function to ensure it's executed after the DOM is ready
 function Body() {
   window.addEventListener('load', () => {
     const today = new Date();
@@ -11,116 +9,76 @@ function Body() {
     preload.classList.add('preload-finish');
     const app = document.querySelector('#app');
     app.innerHTML = `
-    <nav class="container-fluid">
-      <ul>
-        <li>
-          <img src="" alt="" />
-        </li>
+    <nav class="">
+      <menu>
         <li>
           <strong>
             <a href="." style="color: aqua;">Top Movies</a>
           </strong>
         </li>
-      </ul>
-      <ul>
+      </menu>
+      <menu>
         <li>
           <button>Home</button>
         </li>
-      </ul>
-    </nav>
+        </menu>
+      </nav>
       <header>
         <h1>Top Movies</h1>
       </header>
-      <section>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <input type="text" id="search" placeholder="Search" />
-              <button class="btn btn-primary" id="search-btn">Search</button>
+      <main>
+        <section>
+          <form>
+            <div class="grid">
+              <div class="col-12">
+                <div class="input-group">
+                  <input type="text" id="search" placeholder="Search" />
+                  <button class="btn btn-primary" id="search-btn">Search</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <select id="sort">
-                <option value="rank">Rank</option>
-                <option value="title">Title</option>
-                <option value="rating">Rating</option>
-                <option value="year">Year</option>
-              </select>
-              <select id="order">
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-              </select>
-              <button class="btn btn-primary" id="sort-btn">Sort</button>
+            <div class="grid">
+              <div class="col-12">
+                <div class="input-group">
+                  <select id="sort">
+                    <option value="rank">Rank</option>
+                    <option value="title">Title</option>
+                    <option value="rating">Rating</option>
+                    <option value="year">Year</option>
+                  </select>
+                  <select id="order">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </select>
+                  <button class="btn btn-primary" id="sort-btn">Sort</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <select id="filter">
-                <option value="all">All</option>
-                <option value="title">Title</option>
-                <option value="year">Year</option>
-                <option value="rating">Rating</option>
-              </select>
-              <input type="text" id="filter-input" placeholder="Filter" />
-              <button class="btn btn-primary" id="filter-btn">Filter</button>
+            <div class="grid">
+              <div class="col-12">
+                <div class="input-group">
+                  <select id="filter">
+                    <option value="all">All</option>
+                    <option value="title">Title</option>
+                    <option value="year">Year</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                  <input type="text" id="filter-input" placeholder="Filter" />
+                  <button class="btn btn-primary" id="filter-btn">Filter</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <div class="input-group">
-              <button class="btn btn-primary" id="reset-btn">Reset</button>
+            <div class="grid">
+              <div class="col-12">
+                <div class="input-group">
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="col-12">
-            <button class="contrast"
-              data-target="modal-example"
-              onClick="toggleModal(event)">
-              Launch demo modal
-            </button>
-
-            <!-- Modal -->
-            <dialog id="modal-example">
-              <article>
-                <a href="#close"
-                  aria-label="Close"
-                  class="close"
-                  data-target="modal-example"
-                  onClick="toggleModal(event)">
-                </a>
-                <h3>Confirm your action!</h3>
-                <p>
-                  Cras sit amet maximus risus.
-                  Pellentesque sodales odio sit amet augue finibus pellentesque.
-                  Nullam finibus risus non semper euismod.
-                </p>
-                <footer>
-                  <a href="#cancel"
-                    role="button"
-                    class="secondary"
-                    data-target="modal-example"
-                    onClick="toggleModal(event)">
-                    Cancel
-                  </a>
-                  <a href="#confirm"
-                    role="button"
-                    data-target="modal-example"
-                    onClick="toggleModal(event)">
-                    Confirm
-                  </a>
-                </footer>
-              </article>
-            </dialog>
-          </div>
-        </div>
-      </section>
+          </form>
+        </section>
+        <section id="main-content" class="container">
+          
+        </section>
+      </main>
       <footer class="">
         <div id="footer-container">
             <p>Made with
