@@ -1,25 +1,9 @@
 import axios from 'axios';
 import fs from 'fs/promises';
-import dotenv from 'dotenv';
-dotenv.config();
-
+import '../config/dotenv.js';
+import { options } from '../config/api.js';
 const dataDirectory = './data';
 const filePath = `${dataDirectory}/data.js`;
-const API_KEY = process.env.RAPID_API_KEY;
-
-const options = {
-    method: 'GET',
-    url: 'https://unogs-unogs-v1.p.rapidapi.com/search/titles',
-    params: {
-        type: 'movie',
-        top250: '250',
-        order_by: 'date',
-    },
-    headers: {
-        'X-RapidAPI-Key': API_KEY,
-        'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com',
-    },
-};
 
 const getTopMovies = async () => {
     try {

@@ -5,8 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js",
-    "watch": "nodemon server.js"
+    "start": "npm run reset && nodemon --require dotenv/config server.js",
+    "watch": "nodemon server.js",
+    "reset": "cd config && node --require dotenv/config reset.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pg": "^8.11.3"
   }
 }
