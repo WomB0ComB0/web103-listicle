@@ -57,3 +57,5 @@ else {
     renderMovies();
   });
 }
+
+// export default renderMovies;

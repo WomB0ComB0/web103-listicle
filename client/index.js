@@ -1,13 +1,13 @@
 import 'normalize.css/normalize.css';
 import './public/styles/sass/styles.scss';
-import renderMovies from './public/scripts/titles';
+// import renderMovies from './public/scripts/titles';
 
 function Body() {
-  window.addEventListener('load', () => {
+  // window.addEventListener('load', () => {
+  //   const preload = document.querySelector('.preload');
+  //   preload.classList.add('preload-finish');
     const today = new Date();
     const year = today.getFullYear();
-    const preload = document.querySelector('.preload');
-    preload.classList.add('preload-finish');
     const app = document.querySelector('#app');
     app.innerHTML = `
     <nav class="">
@@ -29,7 +29,7 @@ function Body() {
       </header>
       <main>
         <section id="main-content" class="container">
-          ${renderMovies()}
+          '{renderMovies()}'
         </section>
       </main>
       <footer class="">
@@ -47,6 +47,6 @@ function Body() {
         </div>
       </footer>
       `;
-  });
+  // });
 }
 Body();
