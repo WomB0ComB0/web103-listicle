@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get('/', titlesController.getTitles);
 
-router.get('/top-movies/:title', (req, res) => {
+router.get('/:imdb_id', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
