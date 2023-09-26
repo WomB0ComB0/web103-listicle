@@ -16,4 +16,8 @@ router.get('/:imdb_id', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
+router.get('*', (req, res) => {
+  res.status(404).sendFile(path.resolve(__dirname, '../public/404.html'));
+});
+
 export default router;
