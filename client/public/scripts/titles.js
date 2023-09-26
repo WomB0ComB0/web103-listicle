@@ -2,7 +2,6 @@ const renderMovies = async () => {
   const response = await fetch('/titles');
   const data = await response.json();
   
-  // This needs to be changed to the correct element
   const mainContent = document.querySelector('main-content');
 
   if (data) {
@@ -50,7 +49,7 @@ const renderMovies = async () => {
 const requestedUrl = window.location.href.split('/').pop()
 
 if (requestedUrl) {
-  window.location.href = '../../src/page/error/404.html'
+  window.location.href = '../../public/404.html'
 }
 else {
   window.addEventListener('load', () => {

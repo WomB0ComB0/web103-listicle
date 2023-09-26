@@ -1,5 +1,6 @@
 import 'normalize.css/normalize.css';
 import './public/styles/sass/styles.scss';
+import { Nav, Header, Footer } from './public/components/index';
 // import renderMovies from './public/scripts/titles';
 
 function Body() {
@@ -10,42 +11,14 @@ function Body() {
     const year = today.getFullYear();
     const app = document.querySelector('#app');
     app.innerHTML = `
-    <nav class="">
-      <menu>
-        <li>
-          <strong>
-            <a href="." style="color: aqua;">Top Movies</a>
-          </strong>
-        </li>
-      </menu>
-      <menu>
-        <li>
-          <button>Home</button>
-        </li>
-        </menu>
-      </nav>
-      <header>
-        <h1>Top Movies</h1>
-      </header>
+      ${Nav}
+      ${Header}
       <main>
         <section id="main-content" class="container">
           '{renderMovies()}'
         </section>
       </main>
-      <footer class="">
-        <div id="footer-container">
-            <p>Made with
-              <span>💜</span>
-              by
-              <a  href='https://github.com/WomB0ComB0' target="_blank">
-                Mike Odnis
-              </a>
-            </p>
-            <p>
-              <small>Copywrite © <span id="year">${year}</span> Mike Odnis. All rights reserved</small>
-            </p>
-        </div>
-      </footer>
+      ${Footer}
       `;
   // });
 }
