@@ -1,3 +1,5 @@
+const today = new Date();
+const year = today.getFullYear();
 export const Footer = `
         <footer class="">
         <div id="footer-container">
