@@ -7,30 +7,32 @@ function Body() {
     ${Header}
     <main>
       <section id="main-content" class="container">
-        ${Card}
+        <div class="card-container">
+          ${Card}
+        </div>
       </section>
     </main>
     ${Footer}
   `;
 
-  if (document.readyState === 'complete') {
+  // if (document.readyState === 'complete') {
 
-    replaceLoadingContentWithContent();
-  } else {
+  //   replaceLoadingContentWithContent();
+  // } else {
 
-    window.addEventListener('load', () => {
-      replaceLoadingContentWithContent();
-    });
-  }
+  //   window.addEventListener('load', () => {
+  //     replaceLoadingContentWithContent();
+  //   });
+  // }
 
-  function replaceLoadingContentWithContent() {
-    const preload = document.querySelector('.preload');
-    if (preload) {
-      preload.classList.add('preload-finish');
-      const app = document.querySelector('#app');
-      app.innerHTML = content;
-    }
-  }
+  // function replaceLoadingContentWithContent() {
+  //   const preload = document.querySelector('.preload');
+  //   if (preload) {
+  //     preload.classList.add('preload-finish');
+  //     const app = document.querySelector('#app');
+  //     app.innerHTML = content;
+  //   }
+  // }
 }
 
 Body();
