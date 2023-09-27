@@ -19,7 +19,7 @@ export const Card =
           <p>${movie.rating}</p>
           <p>${movie.year}</p>
           <p>${movie.synopsis}</p>
-          <button data-close="${modalId}" target="${modalId}" onClick="${toggleModal(`${modalId}`)}">Close</button>
+          <button data-close="${modalId}" target="${modalId}" onClick="toggleModal(event)">Close</button>
         </article>
       </dialog>
     `
