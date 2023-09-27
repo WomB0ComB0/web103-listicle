@@ -43,6 +43,7 @@ const CardContent = ({ movie }) => {
   return (
     <Fragment>
       <article>
+        
         <h1>{movie.title}</h1>
         <img src={movie.img.toString()} alt={movie.title} />
         <h2>{movie.title_type.toString()}</h2>

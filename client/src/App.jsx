@@ -1,5 +1,5 @@
 import './public/styles/sass/styles.scss';
-import { Nav, Header, Footer } from '../public/components/index';
+import { Nav, Header, Footer, Loading, ErrorPage } from '../public/components/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@picocss/pico';
@@ -18,10 +18,15 @@ export default function App() {
       <Router>
         <Layout>
           <Routes>
-            {isLoading && <h1>Loading...</h1>}
-            <Route path="/" element={<TopMovies data={topMovies} />} />
-            <Route path="/:title/:imdb_id" element={<Movie data={topMovies}/>} />
-            <Route path="*" element={<ErrorPage />} />
+            {isLoading ? 
+              (<Loading />):
+              (<Fragment>
+                <Route path="/" element={<TopMovies data={topMovies} />} />
+                {/* Test this out */}
+                <Route path="/:title/:imdb_id" element={<Movie data={topMovies}/>} />
+                <Route path="*" element={<ErrorPage />} /> 
+              </Fragment>)
+            }
           </Routes>
         </Layout>
       </Router>
