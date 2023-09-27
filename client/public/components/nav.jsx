@@ -1,17 +1,38 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 const Nav = ()  => {
   return (
     <nav className="">
       <menu>
         <li>
           <strong>
-            <a href="." style="color: aqua;">Top Movies</a>
+            <NavLink 
+              to={`.`}
+              className={({
+                isActive
+              }) =>  isActive ? '
+              ' : ''}
+              style={{
+                color: 'aqua'
+              }}
+            >
+              Top Movies
+            </NavLink>
           </strong>
         </li>
       </menu>
       <menu>
         <li>
-          <button>Home</button>
+          <NavLink 
+            className={({isActive}) =>  {
+
+            }}
+            style={{
+
+            }}  
+          >
+            Home
+          </NavLink>
         </li>
       </menu>
     </nav>
