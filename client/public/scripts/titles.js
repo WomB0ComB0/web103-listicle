@@ -1,22 +1,22 @@
 const renderMovies = async () => {
   const response = await fetch('/titles');
   const data = await response.json();
-  
+
   const mainContent = document.querySelector('main-content');
 
   if (data) {
     data.map((movie) => {
       const card = document.createElement('article');
-      card.classList.add('card');
+      card.classNameList.add('card');
 
       const topContainer = document.createElement('div');
-      topContainer.classList.add('top-container');
+      topContainer.classNameList.add('top-container');
 
       const bottomContainer = document.createElement('div');
-      bottomContainer.classList.add('bottom-container');
+      bottomContainer.classNameList.add('bottom-container');
 
       topContainer.style.backgroundImage = `url(${movie.img})`;
-      
+
       const title = document.createElement('h3');
       title.textContent = movie.title;
       bottomContainer.appendChild(title);

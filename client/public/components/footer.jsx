@@ -1,7 +1,9 @@
-const today = new Date();
-const year = today.getFullYear();
-export const Footer = `
-        <footer class="">
+import React from 'react';
+const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  return (
+        <footer className="">
         <div id="footer-container">
             <p>Made with
               <span>💜</span>
@@ -11,8 +13,11 @@ export const Footer = `
               </a>
             </p>
             <p>
-              <small>Copywrite © <span id="year">${year}</span> Mike Odnis. All rights reserved</small>
+              <small>Copywrite © <span id="year">{year}</span> Mike Odnis. All rights reserved</small>
             </p>
         </div>
       </footer>
-`;
+  )
+};
+
+export default Footer;
