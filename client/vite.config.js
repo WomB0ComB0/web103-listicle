@@ -6,18 +6,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
-      devOptions: {
-        swSrc: 'sw.js',
-        enabled: true,
-      },
-      injectRegister: 'auto',
-      injectManifest: true,
-      includeAssets: ['favicon.svg', 'favicon.ico'],
       workbox: {
         cleanupOutdatedCaches: true,
       },
-    })
+    }),
   ],
   build: {
     outDir: '../server/public',
