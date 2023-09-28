@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 const ErrorPage = () => {
   return (
-    <Fragment>
+    <>
       <section className="f0f">
         <h1>404</h1>
         <p>Page not found.</p>
@@ -11,12 +11,12 @@ const ErrorPage = () => {
           Go Home
         </button>
       </section>
-    </Fragment>
+    </>
   );
-}
-export default ErrorPage;
+};
+
 // Maybe a debounce
-const Return = ({ route }) => {
+export const Return = ({ route }) => {
   e.preventDefault();
   window.location.href(`${route}`)
 }
@@ -24,3 +24,5 @@ const Return = ({ route }) => {
 PropTypes.Return = {
   route: PropTypes.string.isRequired,
 }
+
+export default ErrorPage;
