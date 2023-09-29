@@ -5,10 +5,6 @@ import topMovies from '../../../server/data/data.js'
 
 Modal.setAppElement('#app');
 export const Card = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => { setModalIsOpen(true); };
-  const afterOpenModal = () => { };
-  const closeModal = () => { setModalIsOpen(false); };
   return (
     <>
       {topMovies.map((movie, index) => {
@@ -24,15 +20,9 @@ export const Card = () => {
               <button onClick={openModal}>More Info</button>
               </div>
           </article>
-          <Modal id={`${modalId}`}
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={ModalStyles}
-            contentLabel="Example Modal"
-          >
+          <dialog className={{ModalStyles}}>
             <CardContent movie={topMovies} />
-          </Modal>
+          </dialog>
         </Fragment>
       )})};
     </>
@@ -64,6 +54,20 @@ const CardContent = ({ movie }) => {
 CardContent.propTypes = {
   movie: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+function toggleModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    if (modal.hasAttribute('closed')) {
+      console.log('modal has closed attribute')
+      modal.removeAttribute('closed');
+      modal.setAttribute('open', 'open');
+    } else {
+      modal.setAttribute('closed', 'closed');
+    }
+  }
+}
+
 const ModalStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
