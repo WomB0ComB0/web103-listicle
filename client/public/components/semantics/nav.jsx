@@ -6,14 +6,14 @@ const Nav = ()  => {
       <nav className="">
         <menu>
           <li>
-            <strong>
+            <strong className={` text-white`}>
               <NavLink 
                 to={`.`}
                 className={({
                   isActive
                 }) =>  isActive ? `` : ``}
                 style={{
-                  color: 'aqua'
+                  
                 }}
               >
                 Top Movies
