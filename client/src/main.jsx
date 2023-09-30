@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
+import '../public/styles/styles.scss';
 import { registerSW } from 'virtual:pwa-register';
 
 const updateSW = registerSW({
@@ -11,14 +13,11 @@ const updateSW = registerSW({
   },
 });
 
-const appContainer = document.createElement('div');
-
-appContainer.id = 'app'; 
-
-document.body.appendChild(appContainer);
-
-ReactDOM.createRoot(appContainer).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

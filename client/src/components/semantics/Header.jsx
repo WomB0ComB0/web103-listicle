@@ -1,4 +1,6 @@
 import React from 'react';
+import '@picocss/pico';
+
 const Header = () => {
   return (
   <header>

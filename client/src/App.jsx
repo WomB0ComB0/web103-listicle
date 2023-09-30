@@ -1,40 +1,40 @@
-import '../public/styles/sass/styles.scss';
-import Nav from '../public/components/semantics/nav';
-import Header from '../public/components/semantics/header';
-import Footer from '../public/components/semantics/footer';
-import ErrorPage from './pages/ErrorPage';
+
+import React, { Fragment, useState, useEffect } from 'react';
+import Nav from './components/semantics/Nav';
+import Header from './components/semantics/Header';
+import Footer from './components/semantics/Footer';
+import PageNotFound from './pages/PageNotFound';
 import TopMovies from './pages/TopMovies';
-import Loading from '../public/components/dom-states/loading';
-import topMovies from '../../server/data/data';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Loading from './components/dom-states/Loading';
+import { useRoutes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@picocss/pico';
-import React, { Fragment, useState, useEffect } from 'react';
+import usePageLoading from './hooks/useLoading';
+import { URL } from './client';
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [movies, setMovies ] = useState([]);
+  const isLoading = usePageLoading();
+  
   useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-      const titleElement = document.querySelector('head title');
-      titleElement.textContent = 'loading....';
-    };
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
-  }, []);
+    const fetchMovies = async () => {
+      const res = await fetch(`${URL}/titles`);
+      const data = await res.json();
+      setMovies(data);
+    }
+    fetchMovies();
+  }, [])
+
+  let element = useRoutes([
+    { path: '/', element: <TopMovies data={movies} /> },
+    { path: '/id/:imdb_id', element: <TopMovies data={movies} /> },
+    { path: '/*', element: <PageNotFound /> },
+  ]);
+
   return (
     <Fragment>
-      <Router>
-        <Layout>
-          <Routes>
-              (<Fragment>
-                <Route path="/" element={isLoading ? <Loading/> :(<TopMovies data={topMovies} />)} />
-                {/* Test this out */}
-                <Route path="/:title/:imdb_id" element={isLoading ? (<Loading/>) : (<Movie data={topMovies}/>)} />
-                <Route path="*" element={isLoading ? <Loading/> :(<ErrorPage />)} /> 
-              </Fragment>)
-          </Routes>
-        </Layout>
-      </Router>
+      <Layout>
+        {isLoading ? <Loading /> : element}
+      </Layout>
     </Fragment>
   )
 }
@@ -52,6 +52,6 @@ const Layout = ({ children }) =>  {
   )
 }
 
-PropTypes.Layout = {
+Layout.protoTypes = {
   children: PropTypes.node.isRequired,
 }
