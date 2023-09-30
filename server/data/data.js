@@ -1500,4 +1500,5 @@ const topMovies = [
         "title_date": "2020-09-03"
     }
 ]
+
 export default topMovies

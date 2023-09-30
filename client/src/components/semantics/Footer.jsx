@@ -1,4 +1,6 @@
 import React from 'react';
+import '@picocss/pico';
+
 const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
