@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import '@picocss/pico';
 import { URL } from './client';
 import { ThemeProvider } from './providers/ThemeProvider';
-import { usePageLoading } from './hooks/useLoading';
+import usePageLoading from './hooks/useLoading';
 import Loading from './components/dom-states/Loading.jsx';
 export default function App() {
   const [movies, setMovies ] = useState([]);
@@ -21,6 +21,7 @@ export default function App() {
       const res = await fetch(`${URL}/titles`);
       const data = await res.json();
       setMovies(data);
+      console.log(data);
     }
     fetchMovies();
   }, [])
@@ -33,11 +34,11 @@ export default function App() {
 
   return (
     <Fragment>
-      {/* <ThemeProvider> */}
+      <ThemeProvider>
         <Layout>
           {isLoading ? <Loading /> : {element}}
         </Layout>
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </Fragment>
   )
 }

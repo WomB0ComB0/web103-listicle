@@ -16,14 +16,14 @@ const Movies = (props) => {
             {
                 movies && movies.length > 0 ?
                 movies.map((movies,index) => 
-                    // <Fragment key={index}>
+                    <Fragment key={index}>
                         <Card 
                           imdb_id={movies.imdb_id}
                           img={movies.img} 
                           title={movies.title} 
                           rating={movies.rating} 
                           year={movies.year} />
-                    // </Fragment>
+                    </Fragment>
                 ) : <h3 className="noResults">{'No Movies Yet 😞'}</h3>
             }
             </main>
