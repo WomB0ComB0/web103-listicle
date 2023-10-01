@@ -3,7 +3,7 @@ import '@picocss/pico';
 
 const Header = () => {
   return (
-  <header>
+  <header className='container-fluid'>
     <h1 className={``}>Top Movies</h1>
   </header>
 )};

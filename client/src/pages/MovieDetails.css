@@ -1,6 +1,6 @@
 /* Detail Page CSS*/
 
-.gift-info {
+.movie-info {
     display: flex;
     flex-direction: row;
 }
@@ -14,6 +14,6 @@
     width: 80%;
 }
 
-.gift-details {
+.movie-details {
     width: 45vw;
 }
