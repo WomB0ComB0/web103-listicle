@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
-
+import { formatDate } from '../client'
 const Card = (props) => { 
     
-    const [gift, setGift] = useState({id: 0, name: "", pricepoint: "", audience: "", image: ""})
+    const [movie, setMovie] = useState({img: '', title: '', rating:'',  year: '', imdb_id: ''})
 
     useEffect(() => {
-        setGift({id: props.id, name: props.name, pricepoint: props.pricepoint, audience: props.audience, image: props.image});
+        setMovie({img: props.img, title: props.title, rating: props.rating, year: props.year, imdb_id: props.imdb_id});
     }, [props]);
 
     return (
         <div className="card">
-            <div className='top-container' style={{ backgroundImage:`url(${gift.image})`}}></div>
+            <div className='top-container' style={{ backgroundImage:`url(${movie.img})`}}></div>
             <div className='bottom-container'>
-                <h3>{gift.name}</h3>
-                <p>{'Price: ' + gift.pricepoint}</p>
-                <p>{'Great For: ' + gift.audience}</p>
-                <Link to={'/gift/' + gift.id}><a>Read More →</a></Link>
+{/* formatDate */}
+                <h3>{movie.title}</h3>
+                <p>{'⭐' + movie.rating}</p>
+                <p>{'Year: ' + formatDate(movie.year)}</p>
+                <Link to={'/gift/' + movie.imdb_id}><a>Read More →</a></Link>
             </div>
         </div>
     )

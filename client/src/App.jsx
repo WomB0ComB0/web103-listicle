@@ -4,17 +4,18 @@ import Nav from './components/semantics/Nav';
 import Header from './components/semantics/Header';
 import Footer from './components/semantics/Footer';
 import PageNotFound from './pages/PageNotFound';
-import TopMovies from './pages/TopMovies';
-import Loading from './components/dom-states/Loading';
+import MovieDetails from './pages/MovieDetails';
+import Movies from './pages/Movies';
 import { useRoutes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@picocss/pico';
-import usePageLoading from './hooks/useLoading';
 import { URL } from './client';
+import { ThemeProvider } from './providers/ThemeProvider';
+import { usePageLoading } from './hooks/useLoading';
+import Loading from './components/dom-states/Loading.jsx';
 export default function App() {
   const [movies, setMovies ] = useState([]);
   const isLoading = usePageLoading();
-  
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`${URL}/titles`);
@@ -25,16 +26,18 @@ export default function App() {
   }, [])
 
   let element = useRoutes([
-    { path: '/', element: <TopMovies data={movies} /> },
-    { path: '/id/:imdb_id', element: <TopMovies data={movies} /> },
+    { path: '/', element: <Movies data={movies} /> },
+    { path: '/id/:imdb_id', element: <MovieDetails data={movies} /> },
     { path: '/*', element: <PageNotFound /> },
   ]);
 
   return (
     <Fragment>
-      <Layout>
-        {isLoading ? <Loading /> : element}
-      </Layout>
+      {/* <ThemeProvider> */}
+        <Layout>
+          {isLoading ? <Loading /> : {element}}
+        </Layout>
+      {/* </ThemeProvider> */}
     </Fragment>
   )
 }
