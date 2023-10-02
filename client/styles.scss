@@ -17,6 +17,9 @@ html, body {
   font-family: 'BebasNeue',"Roboto", sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
+  // max-width: 1440px;
+  margin-inline: auto;
+  transition: all;
 }
 
 form {

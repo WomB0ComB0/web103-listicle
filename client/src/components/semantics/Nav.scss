@@ -25,7 +25,13 @@ nav {
           li > button {
             color: var(--primary);
             &:hover {
-              color: var(--primary-inverse);
+              color: var(--primary);
+            }
+          }
+          details > summary {
+            color: var(--primary);
+            &:hover {
+              color: var(--primary);
             }
           }
         }

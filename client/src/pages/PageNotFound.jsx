@@ -8,7 +8,12 @@ const PageNotFound = () => {
             <main class="fof-container">
                 <div class="fof">
                     <h1>Error 404</h1>
-                    <Link to="/"><p>Return Home</p></Link>
+                    <p>
+                        The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+                    </p>
+                    <button to="/">
+                        ⭐Return Home⭐
+                    </button>
                 </div>
             </main>
         </div>

@@ -8,9 +8,9 @@ const Footer = () => {
         <footer className="">
         <div id="footer-container">
             <p>Made with
-              <span>💜</span>
-              by
-              <a  href='https://github.com/WomB0ComB0' target="_blank">
+              <span>{` `}🩷{` `}</span>
+              by{` `}
+              <a  href='https://github.com/WomB0ComB0' target="_blank" rel='noreferrer noopener'>
                 Mike Odnis
               </a>
             </p>

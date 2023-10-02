@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-
+import PropTypes from 'prop-types';
 const ThemeContext = createContext();
 
 const localStorageKey = "picoPreferredColorScheme";
@@ -31,3 +31,7 @@ export const ThemeProvider = ({ children }) => {
 };
 
 export const useTheme = () => useContext(ThemeContext);
+
+ThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
