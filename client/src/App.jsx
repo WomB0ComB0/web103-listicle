@@ -1,6 +1,7 @@
 
 import React, { Fragment, useState, useEffect } from 'react';
 import Nav from './components/semantics/Nav';
+import Header from './components/semantics/Header';
 import Footer from './components/semantics/Footer';
 import PageNotFound from './pages/PageNotFound';
 import MovieDetails from './pages/MovieDetails';
@@ -18,10 +19,9 @@ export default function App() {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`${URL}/titles`);
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setMovies(data);
+      console.log(data);
     }
     fetchMovies();
   }, [])
@@ -36,7 +36,7 @@ export default function App() {
     <Fragment>
       <ThemeProvider>
         <Layout>
-          {isLoading ? <Loading /> : element}
+          {isLoading ? <Loading /> : {element}}
         </Layout>
       </ThemeProvider>
     </Fragment>
@@ -47,6 +47,7 @@ const Layout = ({ children }) =>  {
   return (
     <Fragment>
       <Nav />
+      <Header />
       <main className="card-container">
         {children}
       </main>

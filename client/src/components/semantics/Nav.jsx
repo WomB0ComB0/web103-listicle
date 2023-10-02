@@ -47,7 +47,7 @@ const Nav = () => {
         <menu>
           <li>
             <details role="list" dir="rtl">
-              <summary aria-haspopup="listbox" role="link" className="primary">Theme</summary>
+              <summary aria-haspopup="listbox" role="link" className="secondary">Theme</summary>
               <ul role="listbox">
                 <li>
                   <button onClick={() => setTheme("auto")}>

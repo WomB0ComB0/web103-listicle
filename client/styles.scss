@@ -1,22 +1,57 @@
-@import './src/styles/_variables.scss';
-@font-face {
-  font-family: 'BebasNeue';
-  src: url('/font/BebasNeue.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+:root {
+  --color1: #EC1B75;
+  --color2: #EF418C;
+  --color3: #F267A3;
+  --color4: #F58DBA;
+  --color5: #F8B2D0;
+  --color6: #FBD8E7;
+  --color7: #FEFEFE;
 }
 
-html, body {
+/* Pink Light scheme (Default) */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: var(--color1);
+  --primary-hover: var(--color2);
+  --primary-focus: var(--color3);
+  --primary-inverse: var(--color7);
+}
+
+/* Pink Dark scheme (Auto) */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: var(--color4);
+    --primary-hover: var(--color5);
+    --primary-focus: var(--color6);
+    --primary-inverse: var(--color7);
+  }
+}
+
+/* Pink Dark scheme (Forced) */
+[data-theme="dark"] {
+  --primary: var(--color4);
+  --primary-hover: var(--color5);
+  --primary-focus: var(--color6);
+  --primary-inverse: var(--color7);
+}
+
+/* Pink (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
+
+
+body {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: 'BebasNeue',"Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
-  scroll-behavior: smooth;
+
 }
 
 form {

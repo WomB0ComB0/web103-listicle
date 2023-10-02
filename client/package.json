@@ -21,7 +21,6 @@
   "dependencies": {
     "@picocss/pico": "^1.5.10",
     "@types/node": "^20.7.1",
-    "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",

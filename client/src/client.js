@@ -1,7 +1,4 @@
-// import axios from "axios";
-// import { options_title } from "../../server/config/api";
-export const URL = import.meta.env.VITE_URL;
-export const API_KEY = import.meta.env.VITE_API_KEY;
+export const URL = import.meta.env.URL;
 export const formatDate = (dateStr) => {
   const date = new Date(dateStr);
   const day = String(date.getDate()).padStart(2, '0');

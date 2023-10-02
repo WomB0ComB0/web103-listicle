@@ -1,4 +1,3 @@
-@import '../styles/_variables.scss';
 /* 404 Page Not Found CSS */
 
 .fof-container{
@@ -6,7 +5,7 @@
     width: 100%;
     height: 60vh;
     text-align: center;
-    color: var(--primary);
+    color: black;
 }
 
 .fof{
@@ -15,7 +14,7 @@
 }
 
 .fof h1{
-    color: rgba(var(--primary), var(--primary), var(--primary), 0.1);
+    color:rgb(26, 25, 25);
     font-size: 50px;
     display: inline-block;
     padding-right: 12px;
@@ -23,8 +22,6 @@
 }
 
 @keyframes type{
-	  from{
-        box-shadow: inset -3px 0px 0px #888;
-    }
+	  from{box-shadow: inset -3px 0px 0px #888;}
 	  to{box-shadow: inset -3px 0px 0px transparent;}
 }

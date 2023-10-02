@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import './Card.scss'
+import './Card.css'
 import { formatDate } from '../client'
 const Card = (props) => { 
     
@@ -11,27 +11,16 @@ const Card = (props) => {
     }, [props]);
 
     return (
-        <article className="card">
-            <img 
-                src={movie.img !== undefined ? movie.img : '/LargeLogo.png'} 
-                alt={movie.title} 
-                style={{
-
-                }}
-                onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src="/LargeLogo.png"
-                }}
-            />
-            <div className='info'>
+        <div className="card">
+            <div className='top-container' style={{ backgroundImage:`url(${movie.img})`}}></div>
+            <div className='bottom-container'>
+{/* formatDate */}
                 <h3>{movie.title}</h3>
-                <div className='card-text'>
-                    <p>{'⭐' + movie.rating}</p>
-                    <p>{'Year: ' + formatDate(movie.year)}</p>
-                </div>
-                <Link to={'/id/' + movie.imdb_id}>Read More →</Link>
+                <p>{'⭐' + movie.rating}</p>
+                <p>{'Year: ' + formatDate(movie.year)}</p>
+                <Link to={'/gift/' + movie.imdb_id}><a>Read More →</a></Link>
             </div>
-        </article>
+        </div>
     )
 }
 

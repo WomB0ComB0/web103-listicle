@@ -1,21 +1,18 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import './Movies.scss'
-import Header from '../components/semantics/Header'
+import './Movies.css'
 import Card from '../components/Card'
 
 const Movies = (props) => {
-    console.log(props)
+
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
         setMovies(props.data)
-        console.log(props.data)
     }, [props])
     
     return (
-        <>
-            <Header />
-            <section className='Movies grid' style={{display: 'flex', width: '100%', justifyContent: 'space-around', alignContent: 'center', marginInline: 'auto'}}>
+        <div className="Movies">
+            <main>
             {
                 movies && movies.length > 0 ?
                 movies.map((movies,index) => 
@@ -25,14 +22,12 @@ const Movies = (props) => {
                           img={movies.img} 
                           title={movies.title} 
                           rating={movies.rating} 
-                          year={movies.year}
-                        
-                          />
+                          year={movies.year} />
                     </Fragment>
                 ) : <h3 className="noResults">{'No Movies Yet 😞'}</h3>
             }
-            </section>
-        </>  
+            </main>
+        </div>  
     )
 }
 
