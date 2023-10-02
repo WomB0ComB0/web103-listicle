@@ -1,6 +1,7 @@
 import '../config/dotenv.js';
 
 const API_KEY = process.env.RAPID_API_KEY;
+// const API_KEY_TWO = process.env.RAPID_API_KEY_TWO;
 
 export const options = {
   method: 'GET',
@@ -16,3 +17,12 @@ export const options = {
     'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com',
   },
 };
+
+// export const options_title = (id) => ({
+//   method: 'GET',
+//   url: `https://moviesdatabase.p.rapidapi.com/titles/${id}`,
+//   headers: {
+//     'X-RapidAPI-Key': API_KEY_TWO,
+//     'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+//   }
+// });

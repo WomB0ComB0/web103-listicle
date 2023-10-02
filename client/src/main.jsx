@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 // import UsePageLoading from './hooks/useLoading.jsx';
 // import Loading from './components/dom-states/Loading.jsx';
+import { ErrorHandlerProvider } from './providers/useErrorHandler';
 import '../styles.scss';
 import { registerSW } from 'virtual:pwa-register';
 
@@ -22,11 +23,11 @@ root.id = 'root';
 document.body.appendChild(root);
 
 ReactDOM.createRoot(root).render(
-  <React.Fragment>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ErrorHandlerProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
-  </React.Fragment>
+    </ErrorHandlerProvider>
+  </React.StrictMode>
 );
