@@ -18,9 +18,9 @@ export default function App() {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`${URL}/titles`);
-      console.log(res);
+      // console.log(res);
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setMovies(data);
     }
     fetchMovies();

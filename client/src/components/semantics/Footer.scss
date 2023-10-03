@@ -1,1 +1,10 @@
 @import '../../styles/_variables.scss';
+footer {
+  padding: 20px;
+  bottom: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}

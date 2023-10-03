@@ -3,17 +3,26 @@
 .movie-info {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+
 }
 
 .image-container {
     padding-left: 100px;
     width: 40vw;
+    border-radius: 20px;
 }
 
 .image-container img {
     width: 80%;
+    border-radius: 20px;
 }
 
 .movie-details {
     width: 45vw;
+    // height: 100dvh;
+    border-radius: 30px;
 }
+

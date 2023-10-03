@@ -1,4 +1,5 @@
 import React from 'react';
+import './Footer.scss';
 import '@picocss/pico';
 
 const Footer = () => {

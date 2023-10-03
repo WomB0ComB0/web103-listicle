@@ -4,12 +4,12 @@ import Header from '../components/semantics/Header'
 import Card from '../components/Card'
 
 const Movies = (props) => {
-    console.log(props)
+    // console.log(props)
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
         setMovies(props.data)
-        console.log(props.data)
+        // console.log(props.data)
     }, [props])
     
     return (
