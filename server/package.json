@@ -10,7 +10,7 @@
     "reset": "cd config && node --require dotenv/config reset.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "WomB0ComB0",
   "license": "ISC",
   "dependencies": {
     "@railway/cli": "^3.4.0",

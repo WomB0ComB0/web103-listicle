@@ -1,0 +1,136 @@
+@import '../../styles/_variables.scss';
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 50svh;
+  margin-bottom: auto;
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100%;
+  	&__item {
+      list-style-type: none;
+      margin: 0;
+  		& + & {
+  			// border-top: 1rem solid #363e55;
+  		}
+    
+  		&:nth-child(even) span {
+  			animation-direction: reverse;
+  		}
+  	}
+  
+  	&__link {
+  		color: #F6D0B1;
+  		text-decoration: none;
+  		text-transform: uppercase;
+  		display: flex;
+  		white-space: nowrap;
+  		gap: .15em;
+  		font-size: 13.5vmax;
+  		padding: .65em 0;
+  		line-height: 1;
+  		position: relative;
+      // overflow : hidden;
+  		// &--primary {
+  		// 	background: #5B2E48;
+  		// }
+    
+  		span {
+  			display: block;
+  			animation: marquee 25s linear normal infinite;
+  			animation-play-state: running;
+  			position: relative;
+  			z-index: 1;
+        overflow: hidden;    
+				user-select: none;    
+  		}
+    
+  		&:hover {
+  			span {
+  				animation-play-state: paused;
+  			}
+      
+  			.menu__background {
+  				opacity: .75;
+  			}
+  		}
+  	}
+  
+  	&__background {
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		bottom: 0;
+  		opacity: 0;
+  		transition: opacity .3s;
+  		mix-blend-mode: screen;
+  		filter: saturate(0.5);
+    
+  		video {
+  			width: 100%;
+  			height: 100%;
+  			object-fit: fill;
+  		}
+  	}
+    @keyframes marquee {
+	to {
+		transform: translateX(-100%);
+	}
+}
+  }
+}
+
+
+    @keyframes marquee {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+// https://css-tricks.com/how-to-create-neon-text-with-css/
+
+// .logo {
+//   perspective: 1000px;
+//   perspective-origin: 40% 0;
+//   font-size: 8em;
+//   display: inline-flex;
+//   animation: pulsate 2.5s infinite alternate;
+//   letter-spacing: 0.1em;
+//   span {
+//     font-family: impact;
+//     display: block;
+//     transform-origin: 50% 200%;
+//     transform-style: preserve-3d;
+//     transition: transform 0.5s ease-in-out;
+//     color: var(--color2);
+//     user-select: none;
+    // @for $i from 1 through $letters {
+    //   $offset: $i - ceil(calc($letters / 2));
+    //   $trans: if($offset > 0, -89.5deg, 89.5deg);
+    //   &:nth-child(#{$i}) {
+    //     transform-origin: calc(50% + calc(50%/$offset)) 200%;
+    //     font-size: if($offset == 0, 0.85em, 0.9em + 0.015*pow(abs($offset), 2));
+    //     transform: if(
+    //         $offset == 0,
+    //         scale(1, 1),
+    //         scale(95.9 - abs($offset) * 10, 1)
+    //       ) if($offset == 0, translatey(0%), rotatey($trans));
+    //   }
+    // }
+//   }
+// }
+
+@keyframes marquee {
+	to {
+		transform: translateX(-100%);
+	}
+}
