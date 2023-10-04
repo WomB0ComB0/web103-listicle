@@ -9,9 +9,9 @@ nav {
     margin-inline: 0;
     z-index: 30;
     width: 100%;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0 50px (var(--primary-inverse) / 0.2);
+    background: (var(--primary-inverse)/ 0.2);
+    backdrop-filter: blur(5);
     
     menu {
         display: flex;
@@ -23,15 +23,15 @@ nav {
             margin-left: 1rem;
           }
           li > button {
-            color: var(--primary);
+            color: (var(--primary));
             &:hover {
-              color: var(--primary);
+              color: (var(--primary));
             }
           }
           details > summary {
-            color: var(--primary);
+            color: (var(--primary));
             &:hover {
-              color: var(--primary);
+              color: (var(--primary));
             }
           }
         }

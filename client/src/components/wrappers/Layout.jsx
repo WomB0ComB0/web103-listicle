@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types';
-import Nav from './semantics/Nav';
-import Footer from './semantics/Footer';
+import Nav from '../semantics/Nav';
+import Footer from '../semantics/Footer';
 import { ThemeProvider } from '../../providers/ThemeProvider';
 const Layout = ({ children }) =>  {
   return (

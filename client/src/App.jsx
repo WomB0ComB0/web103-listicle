@@ -27,7 +27,7 @@ export default function App() {
     { path: '/', element: <Movies data={movies} /> },
     { path: '/id/:imdb_id', element: <MovieDetails data={movies} /> },
     { path: '/*', element: <PageNotFound /> },
-    { path: '/dashboard', element: <Dashboard />}
+    // { path: '/dashboard', element: <Dashboard />}
   ]);
 
   return (
