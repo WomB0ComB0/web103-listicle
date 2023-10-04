@@ -21,7 +21,7 @@ export default function App() {
       setMovies(data);
     }
     fetchMovies();
-  }, [])
+  }, [])  
 
   let element = useRoutes([
     { path: '/', element: <Movies data={movies} /> },
@@ -32,11 +32,19 @@ export default function App() {
 
   return (
     <Fragment>
-        <Layout>
-          <AuthWrapper>
-            {isLoading ? <Loading /> : element}
-          </AuthWrapper>
-        </Layout>
+      <Loading />
+        {/* <Layout> */}
+          {/* <AuthWrapper> */}
+          {/* <Routes> */}
+            {/* <Route path={``} element={``}/>
+                <Route path={``} element={``}/>
+                <Route path={`/id/:imdb_id`} element={``}/>
+                <Route path={`/*`} element={``}/>
+            */}
+          {/* </Routes> */}
+            {/* {isLoading ? <Loading /> : element} */}
+          {/* </AuthWrapper> */}
+        {/* </Layout> */}
     </Fragment>
   )
 }

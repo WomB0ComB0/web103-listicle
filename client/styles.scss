@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
@@ -111,4 +112,10 @@ form {
   display: flex;
   margin: 0;
   justify-content: space-around;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-behavior: auto;
+  }
 }
