@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import './Movies.scss'
 import Header from '../components/semantics/Header'
 import Card from '../components/Card'
+import Form from '../components/Form'
 
 const Movies = (props) => {
     // console.log(props)
@@ -15,6 +16,7 @@ const Movies = (props) => {
     return (
         <>
             <Header />
+            <Form />
             <section className='Movies grid' style={{display: 'flex', width: '100%', justifyContent: 'space-around', alignContent: 'center', marginInline: 'auto'}}>
             {
                 movies && movies.length > 0 ?

@@ -1,0 +1,18 @@
+@import '../styles/_variables.scss';
+
+form {
+  width: 70dvw !important;
+  margin-inline: auto !important;
+  > * {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .search{
+    display: flex;
+    flex-direction: row;
+    input[type="search"]{
+      flex: 1;
+      margin-right: 1rem;
+    }
+  }
+}
