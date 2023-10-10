@@ -5,6 +5,8 @@ import Footer from './components/semantics/Footer';
 import PageNotFound from './pages/PageNotFound';
 import MovieDetails from './pages/MovieDetails';
 import Movies from './pages/Movies';
+import CreateTitles from './pages/CreateTitles';
+import EditTitles from './pages/EditTitle';
 import { useRoutes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@picocss/pico';
@@ -29,6 +31,8 @@ export default function App() {
   let element = useRoutes([
     { path: '/', element: <Movies data={movies} /> },
     { path: '/id/:imdb_id', element: <MovieDetails data={movies} /> },
+    {  path: '/new', element: <CreateTitles /> },
+    {  path: '/edit/:imdb_id', element: <EditTitles data={movies}/> },
     { path: '/*', element: <PageNotFound /> },
   ]);
 
