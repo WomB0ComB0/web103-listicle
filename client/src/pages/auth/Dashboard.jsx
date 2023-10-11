@@ -8,10 +8,10 @@ import Preference from './crud/Preference'
 const Dashboard = () => {
   return (
     <Routes>
-      <Route element={<Preference />} />
-      <Route element={<CreatePreference />} />
-      <Route element={<EditPreference />} />
-      <Route element={<DeletePreference />} />
+      <Route path={`/`} element={<Preference />} />
+      <Route path={`/new`} element={<CreatePreference />} />
+      <Route path={`/edit/:id`} element={<EditPreference />} />
+      <Route path={`/view/:id/:name`} element={<DeletePreference />} />
     </Routes>
   )
 }
