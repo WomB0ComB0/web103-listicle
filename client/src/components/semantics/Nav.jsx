@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '../../providers/ThemeProvider';
+import UpIcon from '../icons/UpIcon';
+import DownIcon from '../icons/DownIcon';
 import '@picocss/pico';
 import './Nav.scss'
 const Nav = () => {
+  const [clicked, setClicked] = useState(false)
+  const handleClick = () => {
+    return (
+      setClicked(!clicked)
+    );
+  }
   const { theme, setTheme } = useTheme();
   return (
     <>
@@ -68,19 +76,52 @@ const Nav = () => {
             </details>
           </li>
           <li>
-            <a
-              href={`/`}
-              style={{
-                display: `flex`,
-                alignItems: `center`,
-                justifyContent: `center`,
-                textDecoration: `none`,
-              }}
-            >
-              Home
-            </a>
+            <details role='list' dir='rtl'>
+              <summary aria-haspopup="listbox" role="link" className="primary">
+                Sort By Rating
+              </summary>
+              <ul>
+                <li>
+                  <button onClick={() => { }}>
+                    Ascending
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { }}>
+                    Descending
+                  </button>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details role='list' dir='rtl'>
+              <summary aria-haspopup="listbox" role="link" className="primary">
+                Sort by Year
+              </summary>
+              <ul>
+                <li>
+                  <button onClick={() => { }}>
+                    Ascending
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { }}>
+                    Descending
+                  </button>
+                </li>
+              </ul>
+            </details>
           </li>
         </menu>
+        {/* Authentication Logic */}
+        {/* <menu>
+          <li>
+            <button>
+              Sign In
+            </button>
+          </li>
+        </menu> */}
       </nav>
     </>
   );

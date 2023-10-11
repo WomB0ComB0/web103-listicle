@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
+import './Form.scss'
 const Form = () => {
   return (
     <form>

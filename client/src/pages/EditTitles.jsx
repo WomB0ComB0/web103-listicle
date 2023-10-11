@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { URL, formatDate } from '../client'
-import './EditGift.scss'
+import './EditTitles.scss'
 
 const EditTitles = () => {
 

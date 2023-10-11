@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './CreateGift.scss'
+import './CreateTitles.scss'
 
 const CreateGift = () => {
 
