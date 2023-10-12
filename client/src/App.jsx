@@ -13,20 +13,21 @@ import { URL } from './client';
 import { ThemeProvider } from './providers/ThemeProvider';
 import usePageLoading from './hooks/useLoading';
 import Loading from './components/dom-states/Loading.jsx';
+// import { SortingProvider } from './hooks/useSorting';
 
 export default function App() {
   const [movies, setMovies ] = useState([]);
   const isLoading = usePageLoading();
-  // useEffect(() => {
-  //   const fetchMovies = async () => {
-  //     const res = await fetch(`${URL}/titles`);
-  //     // console.log(res);
-  //     const data = await res.json();
-  //     // console.log(data);
-  //     setMovies(data);
-  //   }
-  //   fetchMovies();
-  // }, [])
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const res = await fetch(`${URL}/titles`);
+      // console.log(res);
+      const data = await res.json();
+      // console.log(data);
+      setMovies(data);
+    }
+    fetchMovies();
+  }, [])
 
   let element = useRoutes([
     { path: '/', element: <Movies data={movies} /> },
@@ -39,9 +40,11 @@ export default function App() {
   return (
     <Fragment>
       <ThemeProvider>
-        <Layout>
-          {isLoading ? <Loading /> : element}
-        </Layout>
+        {/* <SortingProvider> */}
+          <Layout>
+            {isLoading ? <Loading /> : element}
+          </Layout>
+        {/* </SortingProvider> */}
       </ThemeProvider>
     </Fragment>
   )

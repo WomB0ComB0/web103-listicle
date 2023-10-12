@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { useTheme } from '../../providers/ThemeProvider';
+// import { useSorting } from '../../hooks/useSorting';
 import UpIcon from '../icons/UpIcon';
 import DownIcon from '../icons/DownIcon';
 import '@picocss/pico';
 import './Nav.scss'
 const Nav = () => {
-  const [clicked, setClicked] = useState(false)
-  const handleClick = () => {
-    return (
-      setClicked(!clicked)
-    );
-  }
+  const [clicked, setClicked] = useState(false);
+  // const handleClick = () => {
+  //   return setClicked(!clicked);
+  // };
   const { theme, setTheme } = useTheme();
+  // const { sortBy, sortOrder, setSortBy, toggleSortOrder } = useSorting(); // Use useSorting hook
+
+  // const handleSortByRating = (order) => {
+  //   setSortBy('rating');
+  //   toggleSortOrder();
+  // };
+
+  // const handleSortByYear = (order) => {
+  //   setSortBy('year');
+  //   toggleSortOrder();
+  // };
   return (
     <>
       <nav className="container-fluid">
@@ -76,18 +86,20 @@ const Nav = () => {
             </details>
           </li>
           <li>
-            <details role='list' dir='rtl'>
+            <details role="list" dir="rtl">
               <summary aria-haspopup="listbox" role="link" className="primary">
                 Sort By Rating
               </summary>
               <ul>
                 <li>
-                  <button onClick={() => { }}>
+                  {/* props.sortByRating('asc') */}
+                  <button onClick={() => {}}>
                     Ascending
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { }}>
+                  {/* props.sortByRating('desc') */}
+                  <button onClick={() => {}}>
                     Descending
                   </button>
                 </li>
@@ -101,18 +113,21 @@ const Nav = () => {
               </summary>
               <ul>
                 <li>
-                  <button onClick={() => { }}>
+                  {/* props.sortByYear('asc') */}
+                  <button onClick={() => {}}>
                     Ascending
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { }}>
+                  {/* props.sortByYear('desc') */}
+                  <button onClick={() => {}}>
                     Descending
                   </button>
                 </li>
               </ul>
             </details>
           </li>
+
         </menu>
         {/* Authentication Logic */}
         {/* <menu>

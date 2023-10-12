@@ -30,6 +30,7 @@ const Search = ({ onSearchChange }) => {
         value={searchValue}
         onChange={handleSearchChange}
         onBlur={handleSearchBlur}
+        autoComplete='off'
         placeholder="Search for a movie"
       />
     </form>

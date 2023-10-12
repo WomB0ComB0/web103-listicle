@@ -1,28 +1,46 @@
 /* Detail Page CSS*/
 
+.MovieDetails {
+    display: inline;
+    flex-wrap: wrap;
+}
+
 .movie-info {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 20px;
     align-items: center;
-
 }
 
+.image-card {
+    background: transparent;
+    box-shadow: none;
+    padding-block: 0;
+}
+
+// @media (max-width: 768px) {
+//     .image-card {
+//         display: none;
+//     }
+// }
+
 .image-container {
-    padding-left: 100px;
-    width: 40vw;
     border-radius: 20px;
 }
 
 .image-container img {
-    width: 80%;
+    width: 100%;
     border-radius: 20px;
 }
 
 .movie-details {
-    width: 45vw;
-    // height: 100dvh;
-    border-radius: 30px;
+  // width: 45vw;
+  max-width: 650px;
+  // height: 100dvh;
+  border-radius: 30px;
+  //   box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 

@@ -38,10 +38,12 @@ const MovieDetails = () => {
 
     return (
         <div className="MovieDetails">
-            <main id="movie-content" className="movie-info">
-                <picture className="image-container ">
-                    <img id="image" src={movie.poster} alt={movie.title} />
-                </picture>
+            <section id="movie-content" className="movie-info">
+                <article className='image-card'>
+                    <picture className="image-container ">
+                        <img id="image" src={movie.poster} alt={movie.title} />
+                    </picture>
+                </article>
                 <article className="movie-details">
                     <h2 id="title">{'Title: ' + movie.title}</h2>
                     <p id="synopsis">{'Description: ' + movie.synopsis}</p>
@@ -54,7 +56,7 @@ const MovieDetails = () => {
                         </button>
                     </a>
                 </article>
-            </main>
+            </section>
         </div>
     );
 }
