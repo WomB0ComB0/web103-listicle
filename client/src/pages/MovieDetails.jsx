@@ -4,6 +4,7 @@ import { URL, formatDate } from '../client';
 import './MovieDetails.scss';
 
 const MovieDetails = () => {
+    const { imdb_id }  = useParams();
     const [movie, setMovie] = useState({
         imdb_id: "",
         title: "",
@@ -15,7 +16,6 @@ const MovieDetails = () => {
         title_date: ""
     });
     
-    const { imdb_id }  = useParams();
 
     useEffect(() => {
         const fetchMovieById = async () => {

@@ -1,82 +1,84 @@
-import { useState } from 'react'
-import './CreateTitles.scss'
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { URL, formatDate } from '../client';
+import './CreateTitles.scss';
 
-const CreateGift = () => {
+const CreateTitles = () => {
+    const [movie, setMovie] = useState({
+        imdb_id: "",
+        title: "",
+        synopsis: "",
+        rating: "",
+        year: "",
+        poster: "",
+        img: "",
+        title_date: ""
+    });
 
-    const date = new Date()
-    let day = date.getDate()
-    let month = date.getMonth() + 1
-    let year = date.getFullYear()
-    let currentDate = year + '-' + month + '-' + day
-
-    const [gift, setGift] = useState({
-        id: 0, name: '',
-        pricepoint: '',
-        audience: '',
-        image: '',
-        description: '',
-        submittedby: '',
-        submittedon: currentDate
-    })
-    
     const handleChange = (event) => {
-        const { name, value } = event.target
-
-        setGift( (prev) => {
-            return {
-                ...prev,
-                [name]:value,
-            }
-        })
+        const { name, value } = event.target;
+        setMovie(prev => ({
+            ...prev,
+            [name]: value,
+        }));
     }
-    
-    const createGift = (event) => {
-        event.preventDefault()
 
+    const createTitles = (event) => {
+        event.preventDefault();
         const options = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(gift),
-        }
-
-        fetch('http://localhost:3001/gifts', options)
-        window.location = '/'
+            body: JSON.stringify(movie),
+        };
+        fetch(`${URL}/titles`, options);
+        window.location = '/';
     }
 
     return (
-        <div className='CreateGift'>
-            <center><h2>Add a Gift</h2></center>
+        <div className='CreateMovie'>
+            <center><h2>Add a Movie</h2></center>
             <form>
-                <label>Name</label> <br />
-                <input type='text' id='name' name='name' value={gift.name} onChange={handleChange} /><br />
+                <label>Title</label> <br />
+                <input type='text' id='title' name='title' value={movie.title} onChange={handleChange} /><br />
                 <br/>
 
-                <label>Description</label><br />
-                <textarea rows='5' cols='50' id='description' name='description' value={gift.description} onChange={handleChange} ></textarea>
+                <label>Synopsis</label><br />
+                <textarea rows='5' cols='50' id='synopsis' name='synopsis' value={movie.synopsis} onChange={handleChange} required maxLength={255} placeholder={`Enter synopsis...`}></textarea>
+                <p>
+                    Characters remaining: {255 - movie.synopsis.length}
+                </p>
                 <br/>
 
-                <label>Image URL</label><br />
-                <input type='text' id='image' name='image' value={gift.image} onChange={handleChange} /><br />
+                <label>Poster URL</label><br />
+                <input type='text' id='poster' name='poster' value={movie.poster} onChange={handleChange} /><br />
                 <br/>
 
-                <label>Price Point</label><br />
-                <input type='text' id='pricepoint' name='pricepoint' value={gift.pricepoint} onChange={handleChange} /><br />
+                <label>Rating</label><br />
+                <input type='text' id='rating' name='rating' value={movie.rating} onChange={handleChange} /><br />
                 <br/>
 
-                <label>Audience</label><br />
-                <input type='text' id='audience' name='audience' value={gift.audience} onChange={handleChange} /><br />
+                <label>Year</label><br />
+                <input type='text' id='year' name='year' value={movie.year} onChange={handleChange} /><br />
                 <br/>
 
-                <label>Submitted By</label><br />
-                <input type='text' id='submittedby' name='submittedby' value={gift.submittedby} onChange={handleChange} /><br />
+                <label>IMDb ID</label><br />
+                <input type='text' id='imdb_id' name='imdb_id' value={movie.imdb_id} onChange={handleChange} /><br />
                 <br/>
 
-                <input type='submit' value='Submit' onClick={createGift} />
+                <label>Additional Image URL</label><br />
+                <input type='text' id='img' name='img' value={movie.img} onChange={handleChange} /><br />
+                <br/>
+
+                <label>Title Date</label><br />
+                <input type='text' id='title_date' name='title_date' value={movie.title_date} onChange={handleChange} /><br />
+                <br/>
+
+                <input type='submit' value='Submit' onClick={createTitles} />
             </form>
         </div>
     )
 }
 
-export default CreateGift
+export default CreateTitles;

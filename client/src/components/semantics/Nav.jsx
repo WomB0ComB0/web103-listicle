@@ -130,13 +130,23 @@ const Nav = () => {
 
         </menu>
         {/* Authentication Logic */}
-        {/* <menu>
+        <menu>
+          <li>
+            <button
+              onClick={() => {
+                window.location.href = `/new`;
+              }
+              }
+            >
+              Add Movie
+            </button>
+          </li>
           <li>
             <button>
               Sign In
             </button>
           </li>
-        </menu> */}
+        </menu>
       </nav>
     </>
   );

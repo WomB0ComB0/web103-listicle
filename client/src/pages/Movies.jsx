@@ -79,7 +79,7 @@ const Movies = (props) => {
         <Search onSearchChange={setSearchValue} />
         {displayedMovies.length > 0 ? (
           displayedMovies.map((movie, index) => (
-            <Fragment key={index}>
+            <Fragment key={movie.id}>
               <Card
                 imdb_id={movie.imdb_id}
                 img={movie.img}

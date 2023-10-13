@@ -1,10 +1,7 @@
 @import '../styles/_variables.scss';
 
 .card {
-  width: 280px;
-  height: 360px;
-  border-radius: 15px;
-  padding: 1.5rem;
+  padding: 0.75rem;
   background: var(--primary-inverse);
   position: relative;
   display: flex;
@@ -22,15 +19,34 @@
   margin-left: 20px;
   margin-right: 40px;
   margin-bottom: 60px;
-  &:hover {
+  svg {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    stroke: var(--primary);
+    // fill: var(--primary);
+    transition: 0.4s ease;
+    z-index: 10;
+    &:hover {
+      fill: var(--primary-inverse);
+    }
+  }
+  &:hover, &:focus-visible {
     transform: translateY(20px);
     cursor: pointer;
     &:before {
       opacity: 1;
     }
     .info {
+      width: 100%;
       opacity: 1;
       transform: translateY(0px);
+    }
+    svg {
+      display: block;
     }
   }
   &:before {

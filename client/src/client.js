@@ -9,3 +9,9 @@ export const formatDate = (dateStr) => {
   const year = date.getFullYear();
   return `${year}-${month}-${day}`;
 };
+
+export const decodeHTMLEntities = (text) => {
+  const parser = new DOMParser();
+  const decodedString = parser.parseFromString(`<!doctype html><body>${text}`, 'text/html').body.textContent;
+  return decodedString;
+};
