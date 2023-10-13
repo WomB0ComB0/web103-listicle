@@ -1,7 +1,12 @@
-// import axios from "axios";
-// import { options_title } from "../../server/config/api";
+import { createClient } from '@supabase/supabase-js';
+
 export const URL = import.meta.env.VITE_URL;
-// export const API_KEY = import.meta.env.VITE_API_KEY;
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_API_KEY = import.meta.env.VITE_SUPABASE_API_KEY;
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY)
+
+// Functions
 export const formatDate = (dateStr) => {
   const date = new Date(dateStr);
   const day = String(date.getDate()).padStart(2, '0');

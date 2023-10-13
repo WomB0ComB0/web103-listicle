@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Nav from './components/semantics/Nav';
-import Footer from './components/semantics/Footer';
+import { useRoutes, Routes, Route } from 'react-router-dom';
 import PageNotFound from './pages/PageNotFound';
 import MovieDetails from './pages/MovieDetails';
 import Movies from './pages/Movies';
@@ -8,9 +7,10 @@ import CreateTitles from './pages/CreateTitles';
 import EditTitles from './pages/EditTitles';
 import { useRoutes, Routes, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Layout from './components/wrappers/Layout';
 import '@picocss/pico';
-import { URL } from './client';
-import { ThemeProvider } from './providers/ThemeProvider';
+import { URL, supabase } from './client';
+import AuthWrapper from './config/AuthWrapper';
 import usePageLoading from './hooks/useLoading';
 import Loading from './components/dom-states/Loading.jsx';
 // import { SortingProvider } from './hooks/useSorting';
@@ -27,7 +27,7 @@ export default function App() {
       setMovies(data);
     }
     fetchMovies();
-  }, [])
+  }, [])  
 
   return (
     <Fragment>
@@ -51,18 +51,3 @@ export default function App() {
   )
 }
 
-const Layout = ({ children }) =>  {
-  return (
-    <Fragment>
-      <Nav />
-      <main className="card-container">
-        {children}
-      </main>
-      <Footer />
-    </Fragment>
-  )
-}
-
-Layout.protoTypes = {
-  children: PropTypes.node.isRequired,
-}

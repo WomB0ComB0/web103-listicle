@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
@@ -86,4 +87,9 @@ textarea {
   resize: vertical;
   min-height: 100px;
   max-height: 300px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-behavior: auto;
+  }
 }

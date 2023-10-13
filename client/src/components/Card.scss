@@ -82,13 +82,13 @@
     position: relative;
     width: 100%;
     z-index: 3;
-    color: var(--primary);
+    color: (var(--primary));
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s;
     h3 {
       margin: 0px;
-      color: var(--primary);
+      color: (var(--primary));
     }
     .card-text {
       display: flex;
@@ -99,7 +99,7 @@
         letter-spacing: 1px;
           font-size: 15px;
           margin-top: 8px;
-          color: var(--primary);
+          color: (var(--primary));
           font-weight: bold;
         }
       p:first-child {
@@ -117,7 +117,7 @@
       border: none;
       border-radius: 3px;
       background: transparent;
-      color: var(--primary);
+      color: (var(--primary));
       font-weight: bold;
       cursor: pointer;
       transition: 0.4s ease;
