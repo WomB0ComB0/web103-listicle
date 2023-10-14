@@ -6,6 +6,8 @@ const SUPABASE_API_KEY = import.meta.env.VITE_SUPABASE_API_KEY;
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY)
 // export const API_KEY = import.meta.env.VITE_API_KEY;
+
+// Functions
 export const formatDate = (dateStr) => {
   const date = new Date(dateStr);
   const day = String(date.getDate()).padStart(2, '0');

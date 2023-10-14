@@ -25,7 +25,7 @@ export default function App() {
       setMovies(data);
     }
     fetchMovies();
-  }, [])
+  }, [])  
 
   return (
     <Fragment>
