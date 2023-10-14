@@ -19,14 +19,20 @@
     "vite-plugin-pwa": "^0.16.5"
   },
   "dependencies": {
+    "@ark-ui/react": "^0.15.0",
+    "@headlessui/react": "^1.7.17",
     "@picocss/pico": "^1.5.10",
-    "@types/node": "^20.8.4",
+    "@supabase/auth-helpers-react": "^0.4.2",
+    "@supabase/auth-ui-react": "^0.4.5",
+    "@supabase/auth-ui-shared": "^0.1.7",
+    "@supabase/supabase-js": "^2.38.1",
+    "@types/node": "^20.8.6",
     "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.16.0",
-    "sass": "^1.69.2"
+    "sass": "^1.69.3"
   },
   "resolutions": {
     "styled-components": "^5"

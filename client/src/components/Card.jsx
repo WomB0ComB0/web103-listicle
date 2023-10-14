@@ -33,6 +33,7 @@ const Card = (props) => {
                     e.target.onerror = null; 
                     e.target.src="/LargeLogo.png"
                 }}
+                loading='lazy'
             />
             <div className='info'>
                 <h3>{movie.title}</h3>
