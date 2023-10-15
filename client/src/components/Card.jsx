@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import './Card.scss'
 import { formatDate, decodeHTMLEntities } from '../client'
 import CloseIcon from './icons/CloseIcon'
+import Loading from './dom-states/Loading'
 const Card = (props) => { 
     
     const [movie, setMovie] = useState({ img: '', title: '', rating:'',  year: '', imdb_id: ''})
@@ -23,18 +24,18 @@ const Card = (props) => {
                     },
                 }} />
             </>
-            <img 
-                src={movie.img !== undefined ? movie.img : '/LargeLogo.png'} 
-                alt={movie.title} 
-                style={{
-
-                }}
-                onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src="/LargeLogo.png"
-                }}
-                loading='lazy'
-            />
+                <img 
+                    src={!!movie.img ? movie.img : '/LargeLogo.png'} 
+                    alt={movie.title} 
+                    style={{
+                        backgroundColor: `var(--primary)`,
+                    }}
+                    onError={(e) => { 
+                        e.target.onerror = null; 
+                        e.target.src="/LargeLogo.png"
+                    }}
+                    loading='lazy'
+                />
             <div className='info'>
                 <h3>{movie.title}</h3>
                 <div className='card-text'>

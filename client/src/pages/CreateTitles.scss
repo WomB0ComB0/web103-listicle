@@ -2,18 +2,20 @@
 .CreateMovie {
     margin-left: 200px;
     margin-right:200px;
-
 }
-
 
 input {
     margin-top: 10px;
     width: 100%;
     height: 45px;
     border-radius: 8px;
-    border: 1px solid ;
+    border: 1px solid var(--primary);
     font-size: 14px;
     padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--primary-inverse);
+    color: var(--primary);
+    font-weight: 700;
 }
 
 label {
@@ -23,8 +25,11 @@ label {
 textarea {
     border-radius: 8px;
     width: 100%;
-    border: 1px solid ;
+    border: 1px solid var(--primary);
     font-size: 14px;
+    background-color: var(--primary-inverse);
+    color: var(--primary);
+    font-weight: 700;
 }
 
 input[type=submit] {
@@ -38,9 +43,13 @@ input[type=submit] {
     font-family: inherit;
     background-color: #1a1a1a;
     color:white;
-    cursor: pointer;
     transition: border-color 0.25s;
     margin-top: 20px;
     margin-bottom: 50px;
+    &:hover{
+        border-color: var(--primary-inverse);
+        background-color: var(--primary);
+        color: white;
+    }
   }
 

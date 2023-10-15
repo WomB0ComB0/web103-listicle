@@ -2,9 +2,36 @@
 .EditMovie {
     margin-left: 200px;
     margin-right:200px;
-
+        margin-top: 75px;
 }
 
+input {
+    margin-top: 10px;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--primary-inverse);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+label {
+    font-size: 18px;
+}
+
+textarea {
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid var(--primary);
+    font-size: 14px;
+    background-color: var(--primary-inverse);
+    color: var(--primary);
+    font-weight: 700;
+}
 
 .deleteButton {
     width: 100%;

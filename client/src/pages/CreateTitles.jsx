@@ -38,7 +38,15 @@ const CreateTitles = () => {
 
     return (
         <div className='CreateMovie'>
-            <center><h2>Add a Movie</h2></center>
+            <center>
+                <h2
+                    style={{
+                        color: 'var(--primary)'
+                    }}
+                >
+                    Add a Movie
+                </h2>
+            </center>
             <form>
                 <label>Title</label> <br />
                 <input type='text' id='title' name='title' value={movie.title} onChange={handleChange} /><br />
@@ -46,13 +54,22 @@ const CreateTitles = () => {
 
                 <label>Synopsis</label><br />
                 <textarea rows='5' cols='50' id='synopsis' name='synopsis' value={movie.synopsis} onChange={handleChange} required maxLength={255} placeholder={`Enter synopsis...`}></textarea>
-                <p>
-                    Characters remaining: {255 - movie.synopsis.length}
+                <p
+                >
+                    Characters remaining:
+                     <span
+                    style={{
+                        color: 'var(--primary)'
+                    }}
+
+                     >
+                    {255 - movie.synopsis.length}
+                    </span>
                 </p>
                 <br/>
 
                 <label>Poster URL</label><br />
-                <input type='text' id='poster' name='poster' value={movie.poster} onChange={handleChange} /><br />
+                <input type='url' id='poster' name='poster' value={movie.poster} onChange={handleChange} /><br />
                 <br/>
 
                 <label>Rating</label><br />

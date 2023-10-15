@@ -3,6 +3,7 @@ import './Movies.scss';
 import Header from '../components/semantics/Header';
 import Card from '../components/Card';
 import Search from '../components/Search';
+import Loading from '../components/dom-states/Loading';
 // import { useSorting } from '../hooks/useSorting';
 
 const Movies = (props) => {
@@ -66,6 +67,9 @@ const Movies = (props) => {
   return (
     <>
       <Header />
+      <section>
+        <Search onSearchChange={setSearchValue} />
+      </section>
       <section
         className='Movies grid'
         style={{
@@ -76,17 +80,16 @@ const Movies = (props) => {
           marginInline: 'auto',
         }}
       >
-        <Search onSearchChange={setSearchValue} />
         {displayedMovies.length > 0 ? (
           displayedMovies.map((movie, index) => (
             <Fragment key={movie.id}>
-              <Card
-                imdb_id={movie.imdb_id}
-                img={movie.img}
-                title={movie.title}
-                rating={movie.rating}
-                year={movie.year}
-              />
+                <Card
+                  imdb_id={movie.imdb_id}
+                  img={movie.img}
+                  title={movie.title}
+                  rating={movie.rating}
+                  year={movie.year}
+                />
             </Fragment>
           ))
         ) : (

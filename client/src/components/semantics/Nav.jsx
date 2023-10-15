@@ -4,29 +4,30 @@ import { supabase } from '../../client';
 import { Avatar } from '@ark-ui/react'
 import '@picocss/pico';
 import './Nav.scss'
+import { useNavigate } from 'react-router-dom'
 import { Popover } from '@headlessui/react'
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState({});
-
   useEffect(() => {
     const fetchProfile = async () => {
       const { data, error } = await supabase.auth.getSession();
       if (error) {
         console.error(error);
       } else {
-        console.log(data);
         setUserProfile(data.session.user.user_metadata);
       }
     };
-
     fetchProfile();
   }, []);
+  console.log(typeof(userProfile))
   return (
     <>
       <Popover
         style={{
-          position: 'relative'
+          position: 'relative',
+          paddingRight: `1.5rem`,
+          zIndex: '10'
         }}
       >
         <Popover.Button
@@ -37,7 +38,8 @@ const Profile = () => {
             gap: '0.5rem',
             cursor: 'pointer',
             height: '50px',
-            borderRadius: `50%`,
+            width: '50px',
+            borderRadius: `100%`,
           }}
         >
           <Avatar.Root
@@ -50,11 +52,15 @@ const Profile = () => {
               height: '50px',
             }}
           >
-            <Avatar.Fallback>
-              PA
-            </Avatar.Fallback>
+            <Avatar.Fallback
+              dangerouslySetInnerHTML={
+                {
+                  __html: userProfile.name ? userProfile.name[0] : '&nbsp;🧑',
+                }
+              }
+            />
             <Avatar.Image
-              src={userProfile.avatar_url} alt={`${userProfile.name}`}
+              src={!!userProfile.avatar_url ? userProfile.avatar_url : '/NoImage.jpg' } alt={`${userProfile.name}`}
               width={50} height={50}
               style={{
                 borderRadius: `50%`,
@@ -98,8 +104,6 @@ const Profile = () => {
 
 const Nav = () => {
   const [session, setSession] = useState(null);
-
-
   useEffect(() => {
     setSession(supabase.auth);
 
@@ -108,6 +112,7 @@ const Nav = () => {
     });
   }, []);
   const { theme, setTheme } = useTheme();
+  const navigate =  useNavigate();
   return (
     <>
       <nav className="container-fluid">
@@ -180,24 +185,44 @@ const Nav = () => {
 
         </menu>
         {/* Authentication Logic */}
-        <menu
+        {!session && window.location.pathname == '/new' ? null : (
+
+          <menu
           style={{
             display: `flex`,
             alignItems: `center`,
             justifyContent: `center`,
             gap: `0.5rem`,
           }}
-        >
-          <li>
+          >
+          {window.location.pathname == '/new' ? (
+
+            <li>
+              <button
+                onClick={() => {
+                  navigate(`/`);
+                }}
+                style={{
+                  padding: `0.25rem`,
+                }}
+              >
+                Home
+              </button>
+            </li>
+          ) :  
+          (<li>
             <button
               onClick={() => {
-                window.location.href = `/new`;
-              }
-              }
+                navigate(`/new`);
+              }}
+              style={{
+                padding: `0.25rem`,
+              }}
             >
               Add Movie
             </button>
-          </li>
+          </li>)
+          }
           {
             session ? (
               <>
@@ -208,6 +233,7 @@ const Nav = () => {
             ) : null
           }
         </menu>
+      )}
       </nav>
     </>
   );

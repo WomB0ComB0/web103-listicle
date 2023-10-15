@@ -4,7 +4,9 @@ import { URL, formatDate } from '../client'
 import './EditTitles.scss'
 
 const EditTitles = () => {
-
+    useEffect(() => {
+        document.querySelector('nav').classList.add('hidden')
+    }, [])
     const [movie, setMovie] = useState({
         imdb_id: "",
         title: "",
@@ -20,7 +22,7 @@ const EditTitles = () => {
     useEffect(() => {
         const fetchTitlesById = async () => {
             try {
-                const response = await fetch(`/titles/${id}`)
+                const response = await fetch(`/titles/${imdb_id}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`)
                 }

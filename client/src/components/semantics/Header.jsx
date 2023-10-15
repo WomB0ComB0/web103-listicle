@@ -21,9 +21,3 @@ const Header = () => {
   </header>
 )};
 export default Header;
-
-          // <marquee>
-          //   <h1 style={{
-          //     fontSize: `6rem`,
-          //   }}>Topins ⭐ Toop, Topins ⭐ Toop, Topins ⭐ Toop</h1>
-          // </marquee>
