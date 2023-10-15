@@ -24,7 +24,6 @@ export default function App() {
       }
     }, [location]);
   const [movies, setMovies] = useState([]);
-  const isLoading = usePageLoading();
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`${URL}/titles`);
