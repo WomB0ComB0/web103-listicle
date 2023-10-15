@@ -7,6 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
+// This is new
+app.use(express.json());
 
 app.use('/titles', titleRouter);
 

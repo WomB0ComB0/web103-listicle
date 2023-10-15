@@ -4,7 +4,7 @@ Submitted by: **Mike Odnis**
 
 About this web app: **App description here**
 
-Time spent: **37** hours
+Time spent: **59** hours
 
 ## Required Features
 

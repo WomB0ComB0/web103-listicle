@@ -8,7 +8,7 @@ const Header = () => {
       marginInline: `0`,
     }}>
 	    <li className="menu__item">
-	    	<marquee href="." className="menu__link menu__link--primary" aria-label="Topins Toop" onClick={() =>  window.location.reload()}>
+	    	<marquee className="menu__link menu__link--primary" aria-label="Topins Toop">
           <span className="menu__label">Topins ⭐ Toop, Topins ⭐ Toop, Topins ⭐ Toop, Topins ⭐ Toop, Topins ⭐ Toop</span>
 	    		{/* <figure className="menu__background">
 	    			<video loop autoPlay muted>
@@ -21,9 +21,3 @@ const Header = () => {
   </header>
 )};
 export default Header;
-
-          // <marquee>
-          //   <h1 style={{
-          //     fontSize: `6rem`,
-          //   }}>Topins ⭐ Toop, Topins ⭐ Toop, Topins ⭐ Toop</h1>
-          // </marquee>

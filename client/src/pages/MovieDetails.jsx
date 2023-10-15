@@ -4,6 +4,7 @@ import { URL, formatDate } from '../client';
 import './MovieDetails.scss';
 
 const MovieDetails = () => {
+    const { imdb_id }  = useParams();
     const [movie, setMovie] = useState({
         imdb_id: "",
         title: "",
@@ -15,7 +16,6 @@ const MovieDetails = () => {
         title_date: ""
     });
     
-    const { imdb_id }  = useParams();
 
     useEffect(() => {
         const fetchMovieById = async () => {
@@ -38,10 +38,12 @@ const MovieDetails = () => {
 
     return (
         <div className="MovieDetails">
-            <main id="movie-content" className="movie-info">
-                <picture className="image-container ">
-                    <img id="image" src={movie.poster} alt={movie.title} />
-                </picture>
+            <section id="movie-content" className="movie-info">
+                <article className='image-card'>
+                    <picture className="image-container ">
+                        <img id="image" src={movie.poster} alt={movie.title} />
+                    </picture>
+                </article>
                 <article className="movie-details">
                     <h2 id="title">{'Title: ' + movie.title}</h2>
                     <p id="synopsis">{'Description: ' + movie.synopsis}</p>
@@ -54,7 +56,7 @@ const MovieDetails = () => {
                         </button>
                     </a>
                 </article>
-            </main>
+            </section>
         </div>
     );
 }
