@@ -20,7 +20,7 @@ const Profile = () => {
     };
     fetchProfile();
   }, []);
-  console.log(typeof(userProfile))
+  // console.log(typeof(userProfile))
   return (
     <>
       <Popover
