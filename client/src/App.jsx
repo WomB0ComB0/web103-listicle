@@ -4,16 +4,25 @@ import MovieDetails from './pages/MovieDetails';
 import Movies from './pages/Movies';
 import CreateTitles from './pages/CreateTitles';
 import EditTitles from './pages/EditTitles';
-import { useRoutes, Routes, Route } from 'react-router-dom';
+import { useRoutes, Routes, Route, useLocation } from 'react-router-dom';
 import '@picocss/pico';
 import { URL } from './client';
-import AuthWrapper from './config/AuthWrapper'
+// import AuthWrapper from './config/AuthWrapper'
 import usePageLoading from './hooks/useLoading';
 import Layout from './components/wrappers/Layout';
-import Loading from './components/dom-states/Loading.jsx';
+import ReactGA from 'react-ga';
+// import Loading from './components/dom-states/Loading.jsx';
 // import { SortingProvider } from './hooks/useSorting';
-
+ReactGA.initialize('G-HR3NZ0RYQW');
 export default function App() {
+  const location = useLocation();
+    useEffect(() => {
+      try {
+        ReactGA.pageview(location.pathname + location.search);
+      } catch (error) {
+        console.error('Failed to send pageview to Google Analytics');
+      }
+    }, [location]);
   const [movies, setMovies] = useState([]);
   const isLoading = usePageLoading();
   useEffect(() => {
