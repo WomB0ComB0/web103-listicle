@@ -4,10 +4,8 @@ import { URL, formatDate } from '../client'
 import './EditTitles.scss'
 
 const EditTitles = () => {
-    useEffect(() => {
-        document.querySelector('nav').classList.add('hidden')
-    }, [])
     const [movie, setMovie] = useState({
+        id: null,
         imdb_id: "",
         title: "",
         synopsis: "",
@@ -15,7 +13,11 @@ const EditTitles = () => {
         year: "",
         poster: "",
         img: "",
-        title_date: ""
+        title_date: "",
+        title_type: "",
+        netflix_id: "",
+        runtime: "",
+        top250: ""
     });
     const { imdb_id } = useParams();
 
@@ -57,11 +59,12 @@ const EditTitles = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            // Question here
-            body: JSON.stringify(movie),
+            body: JSON.stringify({
+                id: movie.id,
+            }),
         }
 
-        fetch(`${URL}/titles/${imdb_id}`, options)
+        fetch(`${URL}/titles`, options)
         window.location = '/'
     }
 
@@ -69,22 +72,25 @@ const EditTitles = () => {
         event.preventDefault()
 
         const options = {
-            method: 'DELETE'
+            method: 'DELETE',
+            body: JSON.stringify({
+                id: movie.id,
+            }),
         }
 
-        fetch(`${URL}/titles/${imdb_id}`, options)
+        fetch(`${URL}/titles`, options)
         window.location = '/'
     }
 
     return (
         <div className='EditMovie'>
-            <form>
+            <form onSubmit={updateTitles}>
                 <label>Title</label> <br />
                 <input type='text' id='title' name='title' value={movie.title} onChange={handleChange} /><br />
                 <br />
 
                 <label>Synopsis</label><br />
-                <textarea rows='5' cols='50' id='synopsis' name='synopsis' value={movie.synopsis} onChange={handleChange} maxLength={255}placeholder={`Enter synopsis...`}></textarea>
+                <textarea rows='5' cols='50' id='synopsis' name='synopsis' value={movie.synopsis} onChange={handleChange} maxLength={255} placeholder={`Enter synopsis...`}></textarea>
                 <p>
                     Characters remaining: {255 - movie.synopsis.length}
                 </p>
@@ -109,12 +115,26 @@ const EditTitles = () => {
                 <input type='text' id='imdb_id' name='imdb_id' value={movie.imdb_id} onChange={handleChange} /><br />
                 <br />
 
-                <input className='submitButton' type='submit' value='Submit' onClick={
-                    updateTitles
-                } />
-                <button className='deleteButton' onClick={deleteTitles}>Delete</button>
+                <label>Title Type</label><br />
+                <input type='text' id='title_type' name='title_type' value={movie.title_type} onChange={handleChange} /><br />
+                <br />
+
+                <label>Netflix ID</label><br />
+                <input type='text' id='netflix_id' name='netflix_id' value={movie.netflix_id} onChange={handleChange} /><br />
+                <br />
+
+                <label>Runtime</label><br />
+                <input type='text' id='runtime' name='runtime' value={movie.runtime} onChange={handleChange} /><br />
+                <br />
+
+                <label>Top 250</label><br />
+                <input type='number' id='top250' name='top250' value={movie.top250} onChange={handleChange} /><br />
+                <br />
+
+                <input className='submitButton' type='submit' value='Update' />
+                <button className='deleteButton' type='button' onClick={deleteTitles}>Delete</button>
             </form>
-        </div>
+        </div >
     )
 }
 
