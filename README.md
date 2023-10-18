@@ -11,13 +11,16 @@ Time spent: **59** hours
 The following **required** functionality is completed:
 
 <!-- Make sure to check off completed functionality below -->
-- [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app displays a title**
-- [x] **The web app displays at least five list items, each with at least three attributes (such as title, text, and image url)**
-- [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
-  - [x] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation*
-- [x] **The web app serves an appropriate 404 page when no matching route is defined**
-- [x] **The web app is appropriately styled using Picocss**
+- [x] **The web app uses React to display data from the API.**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured CustomItem table.**
+- [x] **Users can view a list of options they can select for different aspects of a CustomItem.**
+- [x] **On selecting each option, the displayed visual icon for the CustomItem updates to match the option the user chose.**
+- [x] **The user can submit their choices to save the item to the list of created CustomItem.**
+- [x] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
+- [ ] **The app displays the total price of all features.**
+- [x] **Users can view a list of all submitted CustomItem.**
+- [ ] **Users can edit or delete a submitted CustomItem from the list view of submitted CustomItem.**
+- [ ] **Users can update or delete CustomItem that have been created from the detail page**
 
 The following **optional** features are implemented:
 
@@ -30,6 +33,10 @@ The following **additional** features are implemented:
 - [ ] Filtering Feature
 - [x] Pagination Feature
 - [x] Search Feature
+
+## Stretch Features
+
+- [ ] **Selecting particular options prevents incompatible options from being selected even before form submission.**
 
 ## Video Walkthrough
 
