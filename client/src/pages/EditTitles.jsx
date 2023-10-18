@@ -5,7 +5,6 @@ import './EditTitles.scss'
 
 const EditTitles = () => {
     const [movie, setMovie] = useState({
-        id: null,
         imdb_id: "",
         title: "",
         synopsis: "",
@@ -59,9 +58,7 @@ const EditTitles = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                id: movie.id,
-            }),
+            body: JSON.stringify(movie),
         }
 
         fetch(`${URL}/titles`, options)
