@@ -23,7 +23,7 @@
     "@headlessui/react": "^1.7.17",
     "@picocss/pico": "^1.5.10",
     "@supabase/auth-helpers-react": "^0.4.2",
-    "@supabase/auth-ui-react": "^0.4.5",
+    "@supabase/auth-ui-react": "^0.4.6",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.38.1",
     "@types/node": "^20.8.6",
