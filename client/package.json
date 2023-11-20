@@ -16,7 +16,7 @@
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "vite": "^4.5.0",
-    "vite-plugin-pwa": "^0.16.5"
+    "vite-plugin-pwa": "^0.17.0"
   },
   "dependencies": {
     "@ark-ui/react": "^0.15.0",
