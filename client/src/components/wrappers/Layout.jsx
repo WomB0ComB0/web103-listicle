@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Nav from '../semantics/Nav';
 import Footer from '../semantics/Footer';
 import { ThemeProvider } from '../../providers/ThemeProvider';
-import AuthWrapper from '../../config/AuthWrapper';
+// import AuthWrapper from '../../config/AuthWrapper';
 import Loading from '../dom-states/Loading';
 import usePageLoading from '../../hooks/useLoading';
 const Layout = ({ children }) =>  {
@@ -11,7 +11,7 @@ const Layout = ({ children }) =>  {
   return (
     <Fragment>
       {isLoading ? <Loading /> :
-      <AuthWrapper>
+      <>
             <ThemeProvider>
               <Nav />
               <main className="card-container">
@@ -19,7 +19,7 @@ const Layout = ({ children }) =>  {
               </main>
               <Footer />
             </ThemeProvider>
-      </AuthWrapper>
+      </>
       }
     </Fragment>
   )
